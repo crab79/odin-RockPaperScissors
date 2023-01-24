@@ -1,3 +1,11 @@
+let selection = window.prompt("Rock, Paper, or Scissors?");
+let playerSelection = selection.toUpperCase();
+while (playerSelection != "ROCK" && playerSelection != "PAPER" && playerSelection != "SCISSORS") {
+    alert('Please type "Rock", "Paper", or "Scissors"');
+    selection = window.prompt("Rock, Paper, or Scissors?");
+    playerSelection = selection.toUpperCase();
+}
+
 
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 function getComputerChoice(randomNumber) {
@@ -9,25 +17,30 @@ function getComputerChoice(randomNumber) {
         return "Paper";
     }
 }
-let computerSelection = getComputerChoice(randomNumber)
+let computerSelection = getComputerChoice(randomNumber).toUpperCase()
 
 
-let  playerSelection = window.prompt("Rock, Paper, or Scissors?");
-
-if (playerSelection.toUpperCase() == "ROCK") {
-    console.log('你的選擇是： '+playerSelection);
-}else if (playerSelection.toUpperCase() == "PAPER") {
-    console.log('你的選擇是： '+playerSelection);
-}else if (playerSelection.toUpperCase() == "SCISSORS") {
-console.log('你的選擇是： '+playerSelection);
-}else {
-    while (playerSelection.toUpperCase() != "ROCK" && playerSelection.toUpperCase() != "PAPER" && playerSelection.toUpperCase() != "SCISSORS") {
-        alert('Please type "Rock", "Paper", or "Scissors"');
-        playerSelection = window.prompt("Rock, Paper, or Scissors?");
+function playRound(playerSelection, computerSelection) {
+    console.log('電腦出拳 = '+computerSelection);
+    console.log('你的選擇是 = '+playerSelection);
+    if (computerSelection == playerSelection) {
+        return "平局！";
+    }else if (computerSelection == "ROCK" && playerSelection =="SCISSORS") {
+        return "電腦獲勝！";
+    }else if (computerSelection == "SCISSORS" && playerSelection =="PAPER") {
+        return "電腦獲勝！";
+    }else if (computerSelection == "PAPER" && playerSelection =="ROCK") {
+        return"電腦獲勝！";
+    }else {
+        return "你贏了！"
     }
-    console.log('你的選擇是： '+playerSelection);
-}
-console.log('電腦出拳 = '+computerSelection);
+  }
+
+  console.log(playRound(playerSelection, computerSelection));
+
+
+        
+
 
         
 
