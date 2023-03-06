@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 function getPlayerChoice(selection) {
-=======
-function getPlayerChoice() {
-    let selection = window.prompt("Rock, Paper, or Scissors?");
->>>>>>> 3ef4d7195624990ed5bad00ab951ab1ce4877e8f
     while (selection.toUpperCase() != "ROCK" && 
         selection.toUpperCase() != "PAPER" && 
         selection.toUpperCase() != "SCISSORS") {  
